@@ -39,6 +39,12 @@ RECEIPTS="$BATS_TEST_DIRNAME/../docs/evidence-capabilities.md"
   grep -qF 'most recently written' "$RECEIPTS"
 }
 
+@test "each copyable mode request starts in a configured repository and names its morning receipt" {
+  [ "$(grep -Fc 'In this already configured Git repository' "$DOC")" -eq 4 ] || false
+  [ "$(grep -Fc '**Morning receipt:**' "$DOC")" -eq 4 ] || false
+  grep -qF '.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md' "$DOC" || false
+}
+
 @test "how-it-works links the shift-modes walkthroughs" {
   grep -qF '[Shift modes](shift-modes.md#shift-modes)' "$BATS_TEST_DIRNAME/../docs/how-it-works.md"
 }

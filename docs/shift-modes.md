@@ -42,11 +42,15 @@ Owner-selected catalog entries, with a plan to inspect before implementation.
 
 Claude Code: `/nightshift:hunt` → **Guided** → select entries → **Review first**.
 
-> Hunt Guided, documentation writing, review first. Propose an installation guide based on this
-> repository's current setup commands. Show the sources and planned output before starting.
+> In this already configured Git repository, Hunt Guided, documentation writing, review first.
+> Propose an installation guide based on the repository's current setup commands. Show the sources
+> and planned output before starting.
 
 Approve the assembled order to cut it into the punch list and start. If it needs changes, revise
 it first or save the order for later. The clock starts only after approval.
+
+**Morning receipt:** Check `.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md` and follow its
+index to the item receipts; see [the receipt guide](morning-receipt.md#the-morning-receipt).
 
 ## Guided + Run directly
 
@@ -54,12 +58,16 @@ Owner-selected catalog entries, with immediate authority to discover and impleme
 
 Claude Code: `/nightshift:hunt` → **Guided** → select entries → **Run directly**.
 
-> Hunt Guided, coverage hunt, run directly for two hours. Focus on this repository's parser error
-> paths. Use the existing test runner and leave local commits for review.
+> In this already configured Git repository, Hunt Guided, coverage hunt, run directly for two
+> hours. Focus on this repository's parser error paths. Use the existing test runner and leave
+> local commits for review.
 
 The clock starts immediately. Nightshift works the selected entry under its definition of done
 and ending condition. Decisions that can be made within that scope are recorded with defaults
 instead of causing another approval pause.
+
+**Morning receipt:** Check `.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md` and follow its
+index to the item receipts; see [the receipt guide](morning-receipt.md#the-morning-receipt).
 
 ## Automatic + Review first
 
@@ -68,12 +76,16 @@ Hours are required.
 
 Claude Code: `/nightshift:hunt` → **Automatic** → set hours → **Review first**.
 
-> Hunt Automatic for four hours, review first. Improve this product's onboarding. Inspect the
-> current journey, rank the useful changes, and show me the proposed shift before implementing.
+> In this already configured Git repository, Hunt Automatic for four hours, review first. Improve
+> this product's onboarding. Inspect the current journey, rank the useful changes, and show me the
+> proposed shift before implementing.
 
 A feature or design objective stays a feature or design objective. Finding lint warnings does not
 replace it with a cleanup campaign. Review the evidence, scope, ordering, verification, and hours,
 then approve or revise the plan.
+
+**Morning receipt:** Check `.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md` and follow its
+index to the item receipts; see [the receipt guide](morning-receipt.md#the-morning-receipt).
 
 ## Automatic + Run directly
 
@@ -81,13 +93,16 @@ The same selection process, with immediate authority to work. Hours are required
 
 Claude Code: `/nightshift:hunt` → **Automatic** → set hours → **Run directly**.
 
-> Hunt Automatic for four hours, run directly. Improve this product's onboarding using the existing
-> stack. Work on an isolated branch, finish each change and verify it, and leave everything local
-> for my review.
+> In this already configured Git repository, Hunt Automatic for four hours, run directly. Improve
+> this product's onboarding using the existing stack. Work on an isolated branch, finish each
+> change and verify it, and leave everything local for my review.
 
 The clock starts immediately. A request that already contains an objective, a time budget, and
 clear direct-execution intent needs no extra launch question. Nightshift selects work that serves
 the objective, avoids overlapping entries, and follows each entry's ending condition.
+
+**Morning receipt:** Check `.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md` and follow its
+index to the item receipts; see [the receipt guide](morning-receipt.md#the-morning-receipt).
 
 ## How an entry ends
 
