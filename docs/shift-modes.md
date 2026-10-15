@@ -42,11 +42,19 @@ Owner-selected catalog entries, with a plan to inspect before implementation.
 
 Claude Code: `/nightshift:hunt` → **Guided** → select entries → **Review first**.
 
-> Hunt Guided, documentation writing, review first. Propose an installation guide based on this
+> Hunt Guided, documentation writing, review first. Propose an installation guide based on the
 > repository's current setup commands. Show the sources and planned output before starting.
 
 Approve the assembled order to cut it into the punch list and start. If it needs changes, revise
 it first or save the order for later. The clock starts only after approval.
+
+**Morning receipt (after clock-out, with default settings):** Check
+`.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md` and follow its index to the item
+receipts. A shift without a policy has no shift id and writes
+`.nightshift/receipts/morning-<YYYY-MM-DD>.md`. With `handoff.enabled=false`, clock-out does not
+write a morning page; with `receipts.enabled=false`, there is no receipt index or item receipts.
+If automatic filing is enabled, the page and index move under the selected archive folder. For
+other settings, see [the receipt guide](morning-receipt.md#the-morning-receipt).
 
 ## Guided + Run directly
 
@@ -60,6 +68,14 @@ Claude Code: `/nightshift:hunt` → **Guided** → select entries → **Run dire
 The clock starts immediately. Nightshift works the selected entry under its definition of done
 and ending condition. Decisions that can be made within that scope are recorded with defaults
 instead of causing another approval pause.
+
+**Morning receipt (after clock-out, with default settings):** Check
+`.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md` and follow its index to the item
+receipts. A shift without a policy has no shift id and writes
+`.nightshift/receipts/morning-<YYYY-MM-DD>.md`. With `handoff.enabled=false`, clock-out does not
+write a morning page; with `receipts.enabled=false`, there is no receipt index or item receipts.
+If automatic filing is enabled, the page and index move under the selected archive folder. For
+other settings, see [the receipt guide](morning-receipt.md#the-morning-receipt).
 
 ## Automatic + Review first
 
@@ -75,6 +91,14 @@ A feature or design objective stays a feature or design objective. Finding lint 
 replace it with a cleanup campaign. Review the evidence, scope, ordering, verification, and hours,
 then approve or revise the plan.
 
+**Morning receipt (after clock-out, with default settings):** Check
+`.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md` and follow its index to the item
+receipts. A shift without a policy has no shift id and writes
+`.nightshift/receipts/morning-<YYYY-MM-DD>.md`. With `handoff.enabled=false`, clock-out does not
+write a morning page; with `receipts.enabled=false`, there is no receipt index or item receipts.
+If automatic filing is enabled, the page and index move under the selected archive folder. For
+other settings, see [the receipt guide](morning-receipt.md#the-morning-receipt).
+
 ## Automatic + Run directly
 
 The same selection process, with immediate authority to work. Hours are required.
@@ -88,6 +112,14 @@ Claude Code: `/nightshift:hunt` → **Automatic** → set hours → **Run direct
 The clock starts immediately. A request that already contains an objective, a time budget, and
 clear direct-execution intent needs no extra launch question. Nightshift selects work that serves
 the objective, avoids overlapping entries, and follows each entry's ending condition.
+
+**Morning receipt (after clock-out, with default settings):** Check
+`.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md` and follow its index to the item
+receipts. A shift without a policy has no shift id and writes
+`.nightshift/receipts/morning-<YYYY-MM-DD>.md`. With `handoff.enabled=false`, clock-out does not
+write a morning page; with `receipts.enabled=false`, there is no receipt index or item receipts.
+If automatic filing is enabled, the page and index move under the selected archive folder. For
+other settings, see [the receipt guide](morning-receipt.md#the-morning-receipt).
 
 ## How an entry ends
 
