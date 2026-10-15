@@ -39,9 +39,9 @@ RECEIPTS="$BATS_TEST_DIRNAME/../docs/evidence-capabilities.md"
   grep -qF 'most recently written' "$RECEIPTS"
 }
 
-@test "each copyable mode request starts in a configured repository and names its morning receipt" {
-  [ "$(grep -Fc 'In this already configured Git repository' "$DOC")" -eq 4 ] || false
-  [ "$(grep -Fc '**Morning receipt:**' "$DOC")" -eq 4 ] || false
+@test "mode requests do not assume Git and name their morning receipt" {
+  ! grep -qF 'In this already configured Git repository' "$DOC" || false
+  [ "$(grep -Fc '**Morning receipt (after clock-out, with default settings):**' "$DOC")" -eq 4 ] || false
   grep -qF '.nightshift/receipts/morning-<YYYY-MM-DD>-<shiftId>.md' "$DOC" || false
 }
 
